@@ -9,19 +9,23 @@ const api = axios.create({
 
 api.interceptors.request.use(
   (config) => {
-    console.log("request start !=>", config);
+    // console.log("request start !=>", config);
+    return config;
   },
   (err) => {
-    console.log("request err!=>", err);
+    // console.log("request err!=>", err);
+    return Promise.reject(err);
   }
 );
 
 api.interceptors.response.use(
   (res) => {
-    console.log("response suc!=>", res);
+    // console.log("response suc!=>", res);
+    return res;
   },
   (err) => {
-    console.log("response err!=>", err);
+    // console.log("response err!=>", err);
+    return Promise.reject(err);
   }
 );
 
