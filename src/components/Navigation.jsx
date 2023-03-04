@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  Navbar,
-  Nav,
-  NavDropdown,
-  Form,
-  Button,
-  Container,
-} from "react-bootstrap";
+import { Navbar, Nav, Form, Button, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 export default function Navigation() {
@@ -17,6 +10,7 @@ export default function Navigation() {
           <img
             width={100}
             src="https://www.edigitalagency.com.au/wp-content/uploads/Netflix-logo-red-black-png.png"
+            alt="logo"
           />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
