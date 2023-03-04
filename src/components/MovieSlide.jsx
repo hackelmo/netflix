@@ -1,6 +1,7 @@
 import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import MovieCard from "./MovieCard";
 
 export default function MovieSlide() {
   //react multi carousel
@@ -27,7 +28,9 @@ export default function MovieSlide() {
   return (
     <div>
       <Carousel responsive={responsive}>
-        <div>Item 1</div>
+        <div>
+          <MovieCard />
+        </div>
         <div>Item 2</div>
         <div>Item 3</div>
         <div>Item 4</div>
