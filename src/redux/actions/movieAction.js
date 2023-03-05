@@ -15,13 +15,17 @@ function getMovies() {
         `/movie/upcoming?api_key=${process.env.REACT_APP_MVDB_API_KEY}&language=en-US&page=1`
       );
 
-      const [popularMovies, topRatedMovies, upcomingMovies] = await Promise.all(
-        [popular, topRelated, upComing]
+      const genreList = api.get(
+        `/genre/movie/list?api_key=${process.env.REACT_APP_MVDB_API_KEY}&language=en-US`
       );
+
+      const [popularMovies, topRatedMovies, upcomingMovies, genreListMovies] =
+        await Promise.all([popular, topRelated, upComing, genreList]);
 
       dispatch({
         type: "GET_MOVIES_SUCCESS",
         payload: {
+          genreListMovies: genreListMovies.data.genres,
           popularMovies: popularMovies.data,
           topRatedMovies: topRatedMovies.data,
           upcomingMovies: upcomingMovies.data,

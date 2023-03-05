@@ -1,8 +1,10 @@
 import React from "react";
 import Badge from "react-bootstrap/Badge";
+import { useSelector } from "react-redux";
 
 export default function MovieCard({ movie }) {
   const { poster_path, title, genre_ids, vote_average, adult } = movie;
+  const { genreListMovies } = useSelector((state) => state.movie);
   return (
     <div
       className="movie-card"
@@ -17,8 +19,10 @@ export default function MovieCard({ movie }) {
         <h1>{title}</h1>
 
         <div>
-          {genre_ids.map((item) => (
-            <Badge bg="danger">{item}</Badge>
+          {genre_ids.map((item, i) => (
+            <Badge bg="danger" key={`genre_ids${i}`}>
+              {genreListMovies.find((genre) => genre.id === item).name}
+            </Badge>
           ))}
         </div>
         <div>

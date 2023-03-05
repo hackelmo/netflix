@@ -29,7 +29,7 @@ export default function MovieSlide({ movies }) {
     <div>
       <Carousel responsive={responsive}>
         {movies.results.map((item) => (
-          <MovieCard movie={item} />
+          <MovieCard key={item.id} movie={item} />
         ))}
       </Carousel>
     </div>
