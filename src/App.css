@@ -8,10 +8,26 @@ body {
   color: white !important;
 }
 
+.nav {
+  padding: 0 30px;
+  background-color: black;
+  width: 100%;
+  position: fixed;
+  z-index: 2;
+}
+
+.nav-in {
+  width: 100%;
+}
+
 .navLink {
   text-decoration: none;
   color: white;
   margin-right: 20px;
+}
+
+.navLink:hover {
+  color: beige;
 }
 
 .banner {

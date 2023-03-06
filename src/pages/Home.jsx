@@ -12,7 +12,7 @@ export default function Home() {
 
   useEffect(() => {
     dispatch(movieAction.getMovies());
-  }, []);
+  }, [dispatch]);
 
   if (loading) {
     return (
@@ -29,12 +29,14 @@ export default function Home() {
   return (
     <div>
       <Banner movie={popularMovies.results[0]} />
-      <h1>Popular Movie</h1>
-      <MovieSlide movies={popularMovies} />
-      <h1>TopRated Movie</h1>
-      <MovieSlide movies={topRatedMovies} />
-      <h1>Upcoming Movie</h1>
-      <MovieSlide movies={upcomingMovies} />
+      <div style={{ padding: "0 30px" }}>
+        <h1>Popular Movie</h1>
+        <MovieSlide movies={popularMovies} />
+        <h1>TopRated Movie</h1>
+        <MovieSlide movies={topRatedMovies} />
+        <h1>Upcoming Movie</h1>
+        <MovieSlide movies={upcomingMovies} />
+      </div>
     </div>
   );
 }
